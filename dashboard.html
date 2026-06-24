@@ -1,0 +1,16 @@
+<!DOCTYPE html><html><body>
+<h1>Student Management System</h1>
+<a href="/add">Add Student</a> | <a href="/logout">Logout</a>
+<form action="/search" method="POST">
+<input name="keyword" placeholder="Search">
+<button>Search</button>
+</form>
+<table border="1">
+<tr><th>ID</th><th>Student ID</th><th>Name</th><th>Age</th><th>Department</th><th>Email</th><th>CGPA</th><th>Actions</th></tr>
+{% for s in students %}
+<tr>
+<td>{{s[0]}}</td><td>{{s[1]}}</td><td>{{s[2]}}</td><td>{{s[3]}}</td><td>{{s[4]}}</td><td>{{s[5]}}</td><td>{{s[6]}}</td>
+<td><a href="/update/{{s[0]}}">Update</a> <a href="/delete/{{s[0]}}">Delete</a></td>
+</tr>
+{% endfor %}
+</table></body></html>
